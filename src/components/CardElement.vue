@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <h1>a</h1>
+    <h1>asdfdsf</h1>
 </template>
 
 <style lang="scss" scoped>

@@ -1,8 +1,11 @@
 <script>
+import { store } from '../store';
+
 export default {
+    name: 'MainApp',
     data() {
         return {
-
+            store,
         }
     },
     methods: {
@@ -13,7 +16,9 @@ export default {
 </script>
 
 <template>
-    <h1 class="text-danger">a</h1>
+    <div>
+        <p v-for="card in store.cardsList"> {{ card.name }} </p>
+    </div>
 </template>
 
 <style lang="scss" scoped>
