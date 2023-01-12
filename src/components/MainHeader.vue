@@ -9,7 +9,9 @@ export default {
         }
     },
     methods: {
-
+        test(value) {
+            console.log(value)
+        }
     },
 
 }
@@ -28,12 +30,14 @@ export default {
                 <div class="col-4">
                     <div>
                         <label for="category">Select category:</label>
-                        <select name="category" id="category">
-                            <option value="a">a</option>
-                            <option value="b">b</option>
+                        <select name="category" id="category" v-model="store.selectedValue"
+                            @change="$emit('searchedCard', store.selectedValue)">
+                            <option v-for="archetype in store.archetypeList" :value="archetype">{{ archetype }}
+                            </option>
+
                         </select>
-                        <input type="text" name="searchField" id="searchField" v-model="store.searchText"
-                            @keyup.enter="$emit('searchedCard', store.searchText)">
+                        <!-- <input type="text" name="searchField" id="searchField" v-model="store.searchText"
+                            @keyup.enter="$emit('searchedCard', store.searchText)"> -->
                     </div>
                 </div>
             </div>

@@ -18,7 +18,9 @@ export default {
         }
       })
         .then((response) => {
+          console.warn(searchedElement)
           console.log(response.data.data);
+          console.log(store.archetypeList.indexOf(searchedElement))
           this.store.cardsList = response.data.data;
         })
         .catch(function (error) {
@@ -28,6 +30,7 @@ export default {
 
 
   },
+
   created() {
     this.getCards();
   },
