@@ -1,25 +1,21 @@
 <script>
 import { store } from '../store';
-import CreateLists from './CreateLists.vue';
-
+import CardElement from './CardElement.vue';
 export default {
-    name: "MainApp",
     data() {
         return {
             store,
         };
     },
     methods: {},
-    components: { CreateLists }
+    components: { CardElement }
 }
 </script>
 
 <template>
-    <div class="container">
-        <div class="row">
-            <CreateLists />
-        </div>
-    </div>
+
+    <CardElement v-for="card in store.cardsList" :singleCard="card" />
+
 </template>
 
 <style lang="scss" scoped>

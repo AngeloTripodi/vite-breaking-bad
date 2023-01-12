@@ -1,6 +1,14 @@
 <script>
 import { store } from '../store';
+
 export default {
+    name: 'CardElement',
+    props: {
+        singleCard: {
+            type: Object,
+            required: true,
+        }
+    },
     data() {
         return {
             store,
@@ -15,10 +23,10 @@ export default {
 
 <template>
 
-    <div class="col-12 col-lg-3 col-sm-4 my_card" v-for="card in store.cardsList">
-        <img :src="card.card_images[0].image_url" alt="">
-        <h3>{{ card.name }}</h3>
-        <p>{{ card.archetype }}</p>
+    <div class="col-12 col-lg-3 col-sm-4 my_card">
+        <img :src="singleCard.card_images[0].image_url" alt="">
+        <h3>{{ singleCard.name }}</h3>
+        <p>{{ singleCard.archetype }}</p>
     </div>
 
 
