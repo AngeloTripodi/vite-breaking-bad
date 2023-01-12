@@ -1,23 +1,24 @@
 <script>
 import { store } from '../store';
+import CardElement from './CardElement.vue';
 
 export default {
-    name: 'MainApp',
+    name: "MainApp",
     data() {
         return {
             store,
-        }
+        };
     },
-    methods: {
-
-    },
-
+    methods: {},
+    components: { CardElement }
 }
 </script>
 
 <template>
-    <div>
-        <p v-for="card in store.cardsList"> {{ card.name }} </p>
+    <div class="container">
+        <div class="row">
+            <CardElement />
+        </div>
     </div>
 </template>
 
