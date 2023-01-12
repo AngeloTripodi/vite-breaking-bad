@@ -1,9 +1,11 @@
 <script>
+import { store } from '../store';
 
 export default {
     name: 'MainHeader',
     data() {
         return {
+            store,
         }
     },
     methods: {
@@ -17,11 +19,22 @@ export default {
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 d-flex align-items-center" id="logoBox">
+                <div class="col-8 d-flex align-items-center" id="logoBox">
                     <img class="logo"
                         src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg"
                         alt="yogioh logo">
                     <h1> Yu-Gi-Oh Api </h1>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <label for="category">Select category:</label>
+                        <select name="category" id="category">
+                            <option value="a">a</option>
+                            <option value="b">b</option>
+                        </select>
+                        <input type="text" name="searchField" id="searchField" v-model="store.searchText"
+                            @keyup.enter="$emit('searchedCard', store.searchText)">
+                    </div>
                 </div>
             </div>
         </div>
